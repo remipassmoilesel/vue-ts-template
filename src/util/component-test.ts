@@ -1,6 +1,6 @@
 import Vue, { Component } from 'vue'
-import { SinonSpy } from 'sinon'
-import merge from 'lodash.merge'
+import * as _ from 'lodash';
+import {default as Sinon, SinonSpy} from 'sinon'
 import { ILogger } from './log'
 
 export interface IComponents {
@@ -19,7 +19,7 @@ export class ComponentTest {
       template: this.template,
       components: this.components
     }
-    if (createOptions) merge(options, createOptions)
+    if (createOptions) _.merge(options, createOptions)
     this.vm = new Vue(options).$mount()
   }
 
@@ -31,8 +31,11 @@ export class ComponentTest {
 }
 
 export class MockLogger implements ILogger {
+  private loggerSpy: Sinon.SinonSpy;
+  namespace: string;
 
-  constructor (private loggerSpy: SinonSpy) {
+  constructor (loggerSpy: SinonSpy) {
+    this.loggerSpy = loggerSpy;
   }
 
   info (msg: any) {

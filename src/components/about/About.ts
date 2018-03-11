@@ -7,10 +7,9 @@ import {Logger} from '../../util/log'
 export class AboutComponent extends Vue {
 
   repo: string = 'https://github.com/ducksoupdev/vue-webpack-typescript'
-  protected logger: Logger
+  protected logger: Logger = new Logger('AboutComponent');
 
   mounted() {
-    if (!this.logger) this.logger = new Logger()
     this.$nextTick(() => this.logger.info('about is ready!'))
   }
 }

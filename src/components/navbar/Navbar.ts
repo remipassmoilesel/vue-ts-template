@@ -18,7 +18,7 @@ export class NavbarComponent extends AbstractUiComponent {
     new Link('List', '/list')
   ]
 
-  protected logger: Logger
+  protected logger: Logger = new Logger('NavbarComponent');
 
   @Watch('$route.path')
   pathChanged() {
@@ -26,7 +26,6 @@ export class NavbarComponent extends AbstractUiComponent {
   }
 
   mounted() {
-    if (!this.logger) this.logger = new Logger()
     this.$nextTick(() => this.logger.info(this.object.default))
   }
 }
