@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter, { Location, Route, RouteConfig } from 'vue-router'
 import { makeHot, reload } from './util/hot-reload'
+import {IHotNodeModule} from "./util/HotNodeModule";
+declare const module: IHotNodeModule;
 
 const homeComponent = () => import('./components/home').then(({ HomeComponent }) => HomeComponent)
 const aboutComponent = () => import('./components/about').then(({ AboutComponent }) => AboutComponent)

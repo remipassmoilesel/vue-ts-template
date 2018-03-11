@@ -1,5 +1,7 @@
 import Vue, { Component } from 'vue'
 import * as api from 'vue-hot-reload-api'
+import { IHotNodeModule } from './HotNodeModule'
+declare const module: IHotNodeModule
 
 export async function makeHot (id: string, componentLoader: () => Promise<Component>, acceptFunc: void) {
   if (module.hot) {
