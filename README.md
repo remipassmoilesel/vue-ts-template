@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+Made from: https://github.com/ducksoupdev/vue-webpack-typescript
+
 ## Build Setup
 
 ``` bash
