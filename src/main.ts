@@ -4,6 +4,12 @@ import { createRouter } from './router'
 import {IHotNodeModule} from './util/HotNodeModule';
 declare const module: IHotNodeModule;
 
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue);
+
 const navbarComponent = () => import('./components/navbar').then(({ NavbarComponent }) => NavbarComponent)
 // const navbarComponent = () => import(/* webpackChunkName: 'navbar' */'./components/navbar').then(({ NavbarComponent }) => NavbarComponent)
 

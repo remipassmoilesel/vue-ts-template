@@ -4,12 +4,12 @@ import Component from 'vue-class-component'
 import { spy, assert } from 'sinon'
 import { expect } from 'chai'
 import { ComponentTest, MockLogger } from '../../util/component-test'
-import { NavbarComponent } from './navbar'
+import { NavbarComponent } from './Navbar'
 
 let loggerSpy = spy()
 
 @Component({
-  template: require('./navbar.html')
+  template: require('./Navbar.html')
 })
 class MockNavbarComponent extends NavbarComponent {
   constructor () {

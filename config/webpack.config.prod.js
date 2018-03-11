@@ -18,7 +18,7 @@ const extractSass = new ExtractTextPlugin({
 
 webpackConfig.module.rules = [...webpackConfig.module.rules,
   {
-    test: /\.scss$/,
+    test: /\.s?css$/,
     use: extractSass.extract({
       use: [{
         loader: 'css-loader',
