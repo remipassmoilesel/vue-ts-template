@@ -1,11 +1,15 @@
 import {Component, Vue, Watch} from 'vue-property-decorator'
 import {Link} from './Link'
 import {Logger} from '../../util/log'
+import {AbstractUiComponent} from "../AbstractUiComponent";
 
 @Component({
   template: require('./Navbar.html'),
 })
-export class NavbarComponent extends Vue {
+export class NavbarComponent extends AbstractUiComponent {
+  public componentName: string = "Navigation bar";
+  public componentDescription: string = "Top level navigation bar";
+  public componentTagName: string = "navbar";
 
   object: { default: string } = {default: 'Default object property!'}
   links: Link[] = [

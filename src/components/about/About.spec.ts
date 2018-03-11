@@ -2,12 +2,12 @@ import { spy, assert } from 'sinon'
 import { expect } from 'chai'
 import Component from 'vue-class-component'
 import { ComponentTest, MockLogger } from '../../util/component-test'
-import { AboutComponent } from './about'
+import { AboutComponent } from './About'
 
 let loggerSpy = spy()
 
 @Component({
-  template: require('./about.html')
+  template: require('./About.html')
 })
 class MockAboutComponent extends AboutComponent {
   constructor () {

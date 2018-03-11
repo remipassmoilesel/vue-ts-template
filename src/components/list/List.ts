@@ -1,8 +1,5 @@
-import { Component, Vue } from 'vue-property-decorator'
-import axios, { AxiosResponse } from 'axios'
-import bContainer from 'bootstrap-vue/es/components/layout/container'
-import bCol from 'bootstrap-vue/es/components/layout/col'
-import bRow from 'bootstrap-vue/es/components/layout/row'
+import {Component, Vue} from 'vue-property-decorator'
+import axios, {AxiosResponse} from 'axios'
 
 interface UserResponse {
   id: string
@@ -10,12 +7,7 @@ interface UserResponse {
 }
 
 @Component({
-  template: require('./list.html'),
-  components: {
-    'b-container': bContainer,
-    'b-col': bCol,
-    'b-row': bRow
-  }
+  template: require('./List.html'),
 })
 export class ListComponent extends Vue {
 
@@ -23,18 +15,18 @@ export class ListComponent extends Vue {
   protected axios
   private url = 'https://jsonplaceholder.typicode.com/users'
 
-  constructor () {
+  constructor() {
     super()
     this.axios = axios
   }
 
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       this.loadItems()
     })
   }
 
-  private loadItems () {
+  private loadItems() {
     if (!this.items.length) {
       this.axios.get(this.url).then((response: AxiosResponse) => {
         this.items = response.data

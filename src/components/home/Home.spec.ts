@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { HomeComponent } from './home'
+import { HomeComponent } from './Home'
 import { ComponentTest } from '../../util/component-test'
 
 describe('Home component', () => {
