@@ -1,36 +1,37 @@
-import Component from 'vue-class-component'
-import { expect } from 'chai'
-import { ComponentTest } from '../../util/component-test'
-import { ListComponent } from './List'
+// tslint:disable:no-debugger
+import Component from 'vue-class-component';
+import { expect } from 'chai';
+import { ComponentTest } from '../../util/component-test';
+import { ListComponent } from './List';
 
 @Component({
-  template: require('./List.html')
+  template: require('./List.html'),
 })
 class MockListComponent extends ListComponent {
   constructor () {
-    super()
+    super();
     this.axios = {
       get: () => {
-        return Promise.resolve({ data: [{ name: 'test 1' }, { name: 'test 2' }, { name: 'test 3' }] })
-      }
-    }
+        return Promise.resolve({ data: [{ name: 'test 1' }, { name: 'test 2' }, { name: 'test 3' }] });
+      },
+    };
   }
 }
 
 describe('List component', () => {
-  let directiveTest: ComponentTest
+  let directiveTest: ComponentTest;
 
   beforeEach(() => {
-    directiveTest = new ComponentTest('<div><list></list></div>', { 'list': MockListComponent })
-  })
+    directiveTest = new ComponentTest('<div><list></list></div>', { list: MockListComponent });
+  });
 
   it('should render correct contents', async () => {
-    directiveTest.createComponent()
+    directiveTest.createComponent();
 
     await directiveTest.execute((vm) => { // ensure Vue has bootstrapped/run change detection
-      debugger
-      console.log(vm.$el.querySelectorAll('.content ul li'))
-      expect(vm.$el.querySelectorAll('.content ul li').length).to.equal(3)
-    })
-  })
-})
+      debugger;
+      console.log(vm.$el.querySelectorAll('.content ul li'));
+      expect(vm.$el.querySelectorAll('.content ul li').length).to.equal(3);
+    });
+  });
+});

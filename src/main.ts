@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import { createRouter } from './router'
+import Vue from 'vue';
+import { createRouter } from './router';
 
 import BootstrapVue from 'bootstrap-vue';
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 Vue.use(BootstrapVue);
 
-import './sass/main.scss'
+import './sass/main.scss';
 
 import './components/componentsInit';
 
@@ -14,4 +14,4 @@ import './components/componentsInit';
 new Vue({
   el: '#app-main',
   router: createRouter(),
-})
+});

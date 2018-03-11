@@ -1,11 +1,11 @@
 export interface ILogger {
   namespace: string;
 
-  info (msg: any)
+  info (msg: any);
 
-  warn (msg: any)
+  warn (msg: any);
 
-  error (msg: any)
+  error (msg: any);
 }
 
 export class Logger implements ILogger {
@@ -15,16 +15,16 @@ export class Logger implements ILogger {
     this.namespace = namespace;
   }
 
-  info(msg: any) {
-    console.info(`[${this.namespace}] ${msg}`)
+  public info(msg: any) {
+    console.info(`[${this.namespace}] ${msg}`);
   }
 
-  warn(msg: any) {
-    console.warn(msg)
+  public warn(msg: any) {
+    console.warn(msg);
   }
 
-  error(msg: any) {
-    console.error(msg)
+  public error(msg: any) {
+    console.error(msg);
   }
 
 }
